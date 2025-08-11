@@ -115,7 +115,7 @@ Intraday trend-following & mean-reversion hybrid trading strategy, integrating a
 - `Avg Return`: Average return per trade.  
 - `Total Return`: Cumulative return.  
 - `Annual Return`: Annualised return over test period.
-  ![showcase](output/showcase.PNG)
+![showcase](output/showcase.PNG)
 
 
 
