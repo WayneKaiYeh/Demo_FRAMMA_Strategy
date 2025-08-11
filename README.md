@@ -65,14 +65,14 @@ Intraday trend-following & mean-reversion hybrid trading strategy, integrating a
 - **Multi-Timeframe Trend Consensus Table**  
   Aggregates signals from **5m, 15m, 60m, 4h, 1D** for higher confidence entries.
 
-![TrendTable](output/TrendTable.PNG)
+  ![TrendTable](output/TrendTable.PNG)
 
 - **Position Sizing Suggestions** *(illustrative only)*  
   BUY score drives light/core/heavy allocation hints.
 
 ---
 
-## 📖 Parameter Glossary
+## Parameter Glossary
 
 **Global**
 - `t`: Time index (bar number).  
@@ -115,7 +115,7 @@ Intraday trend-following & mean-reversion hybrid trading strategy, integrating a
 - `Avg Return`: Average return per trade.  
 - `Total Return`: Cumulative return.  
 - `Annual Return`: Annualised return over test period.
-![showcase](output/showcase.png)
+  ![showcase](output/showcase.PNG)
 
 
 
