@@ -10,52 +10,58 @@ Intraday trend-following & mean-reversion hybrid trading strategy, integrating a
 
 ## Key Features
 
+## 📌 Key Features
+
 - **Adaptive FRAMA Channel**  
   Automatically adjusts to volatility, with dynamic upper/lower bands and momentum-based colouring.  
-  *Computation:*  
-  1. Calculate **Fractal Dimension**  
-     \[
-     D = \frac{\ln(N_1 + N_2) - \ln(N_3)}{\ln 2}
-     \]
-     where \( N_1, N_2, N_3 \) are segment-normalised price ranges over different halves of the lookback window.  
-  2. Compute smoothing factor  
-     \[
-     \alpha = e^{-4.6 \cdot (D - 1)}
-     \]
-  3. FRAMA midline:  
-     \[
-     F_t = \alpha \cdot P_t + (1 - \alpha) \cdot F_{t-1}
-     \]
-  4. Upper/Lower bands = \( F_t \pm \text{ATR} \cdot k \).
+
+  **Computation:**  
+  i. Calculate Fractal Dimension  
+     D = (ln(N1 + N2) − ln(N3)) / ln(2)  
+     where N1, N2, N3 are segment-normalised price ranges over different halves of the lookback window.  
+
+  ii. Compute smoothing factor  
+     α = e^(−4.6 × (D − 1))  
+
+  iii. FRAMA midline  
+     F_t = α × P_t + (1 − α) × F_(t−1)  
+
+  iv. Upper/Lower bands  
+     F_t ± ATR × k  
+
+---
 
 - **Multi-Layer Oscillator Filtering**  
   Uses Stochastic RSI + RSI to classify oversold entries into **5 BUY scores** and overbought exits into **5 SELL scores**.  
-  *Computation:*  
-  1. RSI:  
-     \[
-     RSI_t = 100 - \frac{100}{1 + RS_t}
-     \]
-     where \( RS_t \) is the ratio of average gains to losses over a fixed period.  
-  2. Stochastic RSI %K:  
-     \[
-     \%K_t = \frac{RSI_t - \min(RSI)}{\max(RSI) - \min(RSI)} \times 100
-     \]
-  3. Apply smoothing to %K → %D.  
-  4. Score mapping: RSI & Stoch RSI thresholds mapped into score tiers (1–5) for BUY/SELL strength.
+
+  **Computation:**  
+  i. RSI  
+     RSI_t = 100 − 100 / (1 + RS_t)  
+     where RS_t is the ratio of average gains to losses over a fixed period.  
+
+  ii. Stochastic RSI %K  
+     %K_t = ((RSI_t − min(RSI)) / (max(RSI) − min(RSI))) × 100  
+
+  iii. Apply smoothing to %K → %D  
+
+  iv. Score mapping: RSI & Stoch RSI thresholds mapped into score tiers (1–5) for BUY/SELL strength.  
+
+---
 
 - **Zero-Lag EMA Trend Bands**  
   Fast trend flip detection with upper/lower deviation bands; generates ▲/▼ markers for regime change.  
-  *Computation:*  
-  1. Zero-Lag EMA:  
-     \[
-     ZLEMA_t = EMA(P_t + (P_t - P_{t-\text{lag}}), L)
-     \]
-     where \(\text{lag} = \frac{L-1}{2}\).  
-  2. Deviation bands:  
-     \[
-     Upper = ZLEMA_t + m \cdot ATR(L), \quad Lower = ZLEMA_t - m \cdot ATR(L)
-     \]
-  3. Trend state flips when price crosses above/below bands, confirmed by consecutive bar conditions.
+
+  **Computation:**  
+  i. Zero-Lag EMA  
+     ZLEMA_t = EMA(P_t + (P_t − P_(t−lag)), L)  
+     where lag = (L − 1) / 2  
+
+  ii. Deviation bands  
+     Upper = ZLEMA_t + m × ATR(L)  
+     Lower = ZLEMA_t − m × ATR(L)  
+
+  iii. Trend state flips when price crosses above/below bands, confirmed by consecutive bar conditions.
+
 
 - **Multi-Timeframe Trend Consensus Table**  
   Aggregates signals from **5m, 15m, 60m, 4h, 1D** for higher confidence entries.
