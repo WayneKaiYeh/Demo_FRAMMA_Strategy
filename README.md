@@ -1,6 +1,6 @@
 # FRAMA Channel + Stoch RSI — Intraday Signal (Showcase)
 
-![Hero](output/result.png)
+![Hero](output/result.PNG)
 
 Intraday trend-following & mean-reversion hybrid trading strategy, integrating an adaptive FRAMA channel for dynamic support/resistance, multi-layer Stochastic RSI + RSI scoring for precision entries/exits, a Zero-Lag EMA band for rapid trend detection, and a multi-timeframe (MTF) trend table to align signals across time horizons. Designed for high-confidence intraday decision-making while balancing momentum capture with disciplined profit-taking. 
 
