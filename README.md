@@ -119,7 +119,7 @@ Intraday trend-following & mean-reversion hybrid trading strategy, integrating a
 ## Screenshots
 
 **1) FRAMA + Stoch RSI + ZLEMA bands + MTF table + Stats (Showcase)**  
-![Example](output/result.png)
+![Example](output/result.PNG)
 
 **2) Backtest Period Configuration**  
 ![Backtest](output/period.PNG)
