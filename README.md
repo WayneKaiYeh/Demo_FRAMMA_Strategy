@@ -109,13 +109,16 @@ Intraday trend-following & mean-reversion hybrid trading strategy, integrating a
 - Consensus: Combined trend states to filter or confirm entries (details private).
 
 **Trade Statistics (Showcase)**
+
+![showcase](output/showcase.PNG)
+
 - `Trades`: Total number of trades in period.  
 - `Winrate`: Wins / trades.  
 - `WL Ratio`: Wins / losses.  
 - `Avg Return`: Average return per trade.  
 - `Total Return`: Cumulative return.  
 - `Annual Return`: Annualised return over test period.
-![showcase](output/showcase.PNG)
+
 
 
 
