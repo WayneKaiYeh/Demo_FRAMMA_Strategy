@@ -1,6 +1,6 @@
-# 📊 FRAMA Channel + Stoch RSI — Intraday Signal (Showcase)
+# FRAMA Channel + Stoch RSI — Intraday Signal (Showcase)
 
-![Hero](output/720b408d-cf14-4dc7-8cea-9e84eb586f72.png)
+![Hero](output/result.png)
 
 > **Intraday trend-following + mean-reversion hybrid strategy** combining **FRAMA channel**, **Stochastic RSI + RSI scoring**, **Zero-Lag EMA band**, and **multi-timeframe (MTF) trend table**.  
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 📌 Key Features
+## Key Features
 
 - **Adaptive FRAMA Channel**  
   Automatically adjusts to volatility, with dynamic upper/lower bands and momentum-based colouring.
